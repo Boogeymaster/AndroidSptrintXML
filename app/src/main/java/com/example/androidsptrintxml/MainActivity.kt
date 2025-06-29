@@ -6,14 +6,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.androidsptrintxml.databinding.ActivityMainBinding
+import java.lang.IllegalStateException
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+    private var _binding: ActivityMainBinding? = null
+    private val binding
+        get() = _binding ?: throw IllegalStateException("binding for ActivityMain is null")
     private val categoriesListFragment = CategoriesListFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         enableEdgeToEdge()
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
@@ -21,12 +24,8 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        val fragmentManager = supportFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.add(R.id.mainContainer, categoriesListFragment, "categoriesList")
-            .show(categoriesListFragment)
-            .commit()
+        supportFragmentManager.beginTransaction()
+            .add(R.id.mainContainer, categoriesListFragment, "categoriesList").commit()
 
     }
 }
