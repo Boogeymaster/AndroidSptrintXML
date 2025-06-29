@@ -22,4 +22,9 @@ class CategoriesListFragment : Fragment() {
         val view = binding.root
         return view
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
