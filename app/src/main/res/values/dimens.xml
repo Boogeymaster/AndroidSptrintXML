@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_layout_vertical">8dp</dimen>
+    <dimen name="margin_layout_horizontal">16dp</dimen>
+    <dimen name="margin_between_btn">2dp</dimen>
+    <dimen name="padding_btn_horizontal">20dp</dimen>
+    <dimen name="padding_btn_vertical">10dp</dimen>
+    <dimen name="padding_end_btn_icon">24dp</dimen>
+    <dimen name="corner_radius">8dp</dimen>
+</resources>
