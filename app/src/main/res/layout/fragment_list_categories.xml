@@ -13,6 +13,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Categories"
-        tools:textSize="30sp" />
+        android:text="Categories"
+        android:textSize="30sp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
