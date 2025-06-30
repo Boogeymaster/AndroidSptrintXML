@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import com.example.androidsptrintxml.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -27,8 +28,20 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.commit {
             setReorderingAllowed(true)
+            add<FavoritesFragment>(R.id.mainContainer)
             add<CategoriesListFragment>(R.id.mainContainer)
         }
-
+        binding.apply {
+            btnCategory.setOnClickListener {
+                supportFragmentManager.commit {
+                    replace<CategoriesListFragment>(R.id.mainContainer)
+                }
+            }
+            btnFavorites.setOnClickListener {
+                supportFragmentManager.commit {
+                    replace<FavoritesFragment>(R.id.mainContainer)
+                }
+            }
+        }
     }
 }
