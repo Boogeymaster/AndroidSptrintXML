@@ -29,16 +29,17 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.commit {
             setReorderingAllowed(true)
             add<FavoritesFragment>(R.id.mainContainer)
-            add<CategoriesListFragment>(R.id.mainContainer)
         }
         binding.apply {
             btnCategory.setOnClickListener {
                 supportFragmentManager.commit {
+                    setReorderingAllowed(true)
                     replace<CategoriesListFragment>(R.id.mainContainer)
                 }
             }
             btnFavorites.setOnClickListener {
                 supportFragmentManager.commit {
+                    setReorderingAllowed(true)
                     replace<FavoritesFragment>(R.id.mainContainer)
                 }
             }
