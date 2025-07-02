@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.commit {
             setReorderingAllowed(true)
-            add<FavoritesFragment>(R.id.mainContainer)
+            add<CategoriesListFragment>(R.id.mainContainer)
         }
         binding.apply {
             btnCategory.setOnClickListener {
