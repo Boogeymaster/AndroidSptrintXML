@@ -2,4 +2,5 @@
     <string name="app_name">AndroidSptrintXML</string>
     <string name="title_category">category</string>
     <string name="title_favorites">favorites</string>
+    <string name="categories">categories</string>
 </resources>

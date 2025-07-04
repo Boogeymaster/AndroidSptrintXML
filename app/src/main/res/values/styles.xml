@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="StyleTitle14" parent="TextAppearance.AppCompat">
         <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">@font/montserrat_alternates_semi_bold</item>
         <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="StyleHeader" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/montserrat_alternates_semi_bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="color">@color/header_color</item>
     </style>
 
     <style name="StyleNavButton" parent="Widget.Material3.Button">

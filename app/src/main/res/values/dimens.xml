@@ -2,6 +2,7 @@
 <resources>
     <dimen name="margin_layout_vertical">8dp</dimen>
     <dimen name="margin_layout_horizontal">16dp</dimen>
+    <dimen name="margin_between_cards">8dp</dimen>
     <dimen name="margin_between_btn">2dp</dimen>
     <dimen name="padding_btn_horizontal">20dp</dimen>
     <dimen name="padding_btn_vertical">10dp</dimen>
