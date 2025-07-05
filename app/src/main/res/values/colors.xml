@@ -6,4 +6,5 @@
     <color name="red_color">#E13E3E</color>
     <color name="background_color">#F4FAFF</color>
     <color name="ripple_color">#33FFFFFF</color>
+    <color name="header_color">#5F3678</color>
 </resources>
