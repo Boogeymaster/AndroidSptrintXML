@@ -9,34 +9,26 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="224dp"
-        android:layout_marginTop="32dp">
+        android:layout_height="@dimen/header_layout_height">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/bcg_categories">
+            android:src="@drawable/bcg_categories" />
 
-        </ImageView>
-
-        <FrameLayout
-            android:layout_width="149dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="164dp"
+        <TextView
+            style="@style/StyleHeader"
+            android:layout_width="@dimen/header_tv_width"
+            android:layout_height="@dimen/header_tv_height"
+            android:layout_marginStart="@dimen/margin_layout_std"
+            android:layout_marginBottom="@dimen/margin_layout_std"
             android:background="@drawable/shape_radius_8"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                style="@style/StyleHeader"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:text="@string/categories" />
-        </FrameLayout>
+            android:gravity="center"
+            android:text="@string/categories"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -44,8 +36,7 @@
         android:id="@+id/rvCategories"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="16dp"
-        android:layout_marginBottom="20dp"
+        android:layout_margin="@dimen/margin_layout_std"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
