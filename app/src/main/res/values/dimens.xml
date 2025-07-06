@@ -3,8 +3,8 @@
     <dimen name="margin_layout_half">8dp</dimen>
     <dimen name="margin_layout_std">16dp</dimen>
     <dimen name="margin_between_btn">2dp</dimen>
-    <dimen name="padding_btn_horizontal">20dp</dimen>
-    <dimen name="padding_btn_vertical">10dp</dimen>
+    <dimen name="padding_std">20dp</dimen>
+    <dimen name="padding_half">10dp</dimen>
     <dimen name="padding_end_btn_icon">24dp</dimen>
     <dimen name="corner_radius">8dp</dimen>
     <dimen name="header_layout_height">224dp</dimen>
