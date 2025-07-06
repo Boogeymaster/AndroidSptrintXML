@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.example.androidsptrintxml.databinding.FragmentListCategoriesBinding
 
 class CategoriesListFragment : Fragment() {
@@ -20,6 +21,7 @@ class CategoriesListFragment : Fragment() {
     ): View {
         _binding = FragmentListCategoriesBinding.inflate(inflater, container, false)
         val view = binding.root
+        initRecycler()
         return view
     }
 
@@ -27,4 +29,12 @@ class CategoriesListFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    fun initRecycler() {
+        val stub = STUB
+        val categoriesListAdapter = CategoriesListAdapter(stub.getCategories())
+        val recyclerView: RecyclerView = binding.rvCategories
+        recyclerView.adapter = categoriesListAdapter
+    }
+
 }
