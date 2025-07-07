@@ -12,6 +12,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:contentDescription="@string/categories_header_image"
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,15 +35,13 @@
         android:id="@+id/rvCategories"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/margin_layout_std"
+        android:layout_margin="@dimen/margin_layout_half"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:spanCount="2"
         tools:itemCount="6"
-        tools:listitem="@layout/item_category">
-
-    </androidx.recyclerview.widget.RecyclerView>
+        tools:listitem="@layout/item_category" />
 
 </LinearLayout>

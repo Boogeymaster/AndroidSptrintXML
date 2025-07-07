@@ -4,4 +4,6 @@
     <string name="title_category">категория</string>
     <string name="title_favorites">"избранное"</string>
     <string name="categories">категории</string>
+    <string name="categories_header_image">изображение заголовка категорий</string>
+    <string name="categories_image">изображение категории</string>
 </resources>

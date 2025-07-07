@@ -32,11 +32,10 @@
 
     <style name="StyleCardDescription" parent="TextAppearance.AppCompat">
         <item name="android:textSize">12sp</item>
-        <item name="android:fontFamily">@font/montserrat_alternates_medium</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
         <item name="android:textColor">@color/description_color</item>
         <item name="android:layout_marginVertical">@dimen/margin_layout_half</item>
         <item name="android:layout_marginHorizontal">@dimen/margin_layout_half</item>
-
     </style>
 
     <style name="StyleNavButton" parent="Widget.Material3.Button">
