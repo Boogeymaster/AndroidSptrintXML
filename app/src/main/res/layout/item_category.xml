@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="@dimen/margin_layout_half"
     android:clickable="true"
     android:focusable="true"
@@ -15,30 +16,26 @@
         android:orientation="vertical">
 
         <ImageView
+            android:contentDescription="@string/categories_image"
             android:id="@+id/ivCategory"
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="@dimen/categories_image_height"
             android:scaleType="centerCrop"
-            android:src="@drawable/burger">
-
-        </ImageView>
+            android:src="@drawable/burger"/>
 
         <TextView
             android:id="@+id/tvHeaderCard"
             style="@style/StyleCardHeader"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="бургеры">
-
-        </TextView>
+            tools:text="бургеры"/>
 
         <TextView
             android:id="@+id/tvDescriptionCard"
             style="@style/StyleCardDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Рецепты всех популярных видов бургеров">
+            tools:text="Рецепты всех популярных видов бургеров"/>
 
-        </TextView>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
