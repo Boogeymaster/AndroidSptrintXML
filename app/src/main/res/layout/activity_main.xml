@@ -20,8 +20,8 @@
         android:id="@+id/llButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/margin_layout_horizontal"
-        android:layout_marginVertical="@dimen/margin_layout_vertical"
+        android:layout_marginHorizontal="@dimen/margin_layout_std"
+        android:layout_marginVertical="@dimen/margin_layout_std"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/constrainLayout">
 
