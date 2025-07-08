@@ -22,16 +22,19 @@ class CategoriesListAdapter(private val dataSet: List<Category>) :
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
-        try {
-            val inputStream: InputStream? =
-                viewHolder.itemView.context?.assets?.open(dataSet[position].imageUrl)
-            val drawable = Drawable.createFromStream(inputStream, null)
-            viewHolder.binding.ivCategory.setImageDrawable(drawable)
-        } catch (e: Exception) {
-            Log.e("error", "Error drawable in onBindViewHolder", e)
+        with(viewHolder.binding) {
+            try {
+                val inputStream: InputStream? =
+                    viewHolder.itemView.context?.assets?.open(dataSet[position].imageUrl)
+                val drawable = Drawable.createFromStream(inputStream, null)
+                ivCategory.setImageDrawable(drawable)
+            } catch (e: Exception) {
+                Log.e("error", "Error drawable in onBindViewHolder", e)
+            }
+            tvCategoryTitle.text = dataSet[position].title
+            tvCategoryDescription.text = dataSet[position].description
         }
-        viewHolder.binding.tvHeaderCard.text = dataSet[position].title
-        viewHolder.binding.tvDescriptionCard.text = dataSet[position].description
+
     }
 
     override fun getItemCount() = dataSet.size

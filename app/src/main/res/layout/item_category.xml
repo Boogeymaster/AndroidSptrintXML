@@ -24,14 +24,14 @@
             android:src="@drawable/burger"/>
 
         <TextView
-            android:id="@+id/tvHeaderCard"
+            android:id="@+id/tvCategoryTitle"
             style="@style/StyleCardHeader"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:text="бургеры"/>
 
         <TextView
-            android:id="@+id/tvDescriptionCard"
+            android:id="@+id/tvCategoryDescription"
             style="@style/StyleCardDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
