@@ -11,9 +11,6 @@ import androidx.fragment.app.replace
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidsptrintxml.databinding.FragmentListCategoriesBinding
 
-const val ARG_CATEGORY_ID = "category_id"
-const val ARG_CATEGORY_NAME = "category_name"
-const val ARG_CATEGORY_IMAGE_URL = "category_URL"
 
 class CategoriesListFragment : Fragment() {
     private var _binding: FragmentListCategoriesBinding? = null
@@ -51,8 +48,8 @@ class CategoriesListFragment : Fragment() {
     }
 
     fun openRecipesByCategoryId(categoryId: Int) {
-        val category = STUB.getCategories().first { it.id == categoryId }
-        val categoryName = category.title
+        val category = STUB.getCategories().find { it.id == categoryId }
+        val categoryName = category?.title ?: return
         val categoryImageUrl = category.imageUrl
         val bundle = bundleOf(
             ARG_CATEGORY_ID to categoryId,
