@@ -12,23 +12,21 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:contentDescription="@string/recipe_list_image"
             android:id="@+id/ivRecipesHeader"
-            android:layout_width="match_parent"
-            android:layout_height="224dp"
-            android:scaleType="centerCrop"
-            tools:src="@drawable/burger"
+            style="@style/StyleImageViewHeader"
+            android:contentDescription="@string/recipe_list_image"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/burger" />
 
         <TextView
-            style="@style/StyleFragmentHeader"
             android:id="@+id/tvRecipesHeader"
-            tools:text="@string/burgers"
+            style="@style/StyleFragmentHeader"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@string/burgers" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -40,7 +38,7 @@
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/ivRecipesHeader"
         app:spanCount="1"
         tools:itemCount="6"
         tools:listitem="@layout/item_recipe" />
