@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.androidsptrintxml.databinding.ItemRecipeBinding
 import java.io.InputStream
 
-class RecipesListAdapter(private val recipesList: List<Recipe>?) :
+class RecipesListAdapter(private val recipesList: List<Recipe>) :
     RecyclerView.Adapter<RecipesListAdapter.ViewHolder>() {
     var itemClickListener: OnItemClickListener? = null
 
@@ -35,19 +35,18 @@ class RecipesListAdapter(private val recipesList: List<Recipe>?) :
         with(viewHolder.binding) {
             try {
                 val inputStream: InputStream? =
-                    viewHolder.itemView.context?.assets?.open(recipesList?.get(position)?.imageUrl
-                        ?: return)
+                    viewHolder.itemView.context?.assets?.open(recipesList[position].imageUrl)
                 val drawable = Drawable.createFromStream(inputStream, null)
                 ivRecipe.setImageDrawable(drawable)
             } catch (e: Exception) {
                 Log.e("error", "Error drawable in onBindViewHolder", e)
             }
-            tvRecipeTitle.text = recipesList?.get(position)?.title
+            tvRecipeTitle.text = recipesList[position].title
             root.setOnClickListener {
-                itemClickListener?.onItemClick(recipesList?.get(position)?.id ?: return@setOnClickListener)
+                itemClickListener?.onItemClick(recipesList[position].id)
             }
         }
     }
 
-    override fun getItemCount() = recipesList?.size ?: 0
+    override fun getItemCount() = recipesList.size
 }
