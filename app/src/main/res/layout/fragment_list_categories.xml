@@ -12,11 +12,9 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/ivCategories"
+            style="@style/StyleImageViewHeader"
             android:contentDescription="@string/categories_header_image"
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
             android:src="@drawable/bcg_categories"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +37,7 @@
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/ivCategories"
         app:spanCount="2"
         tools:itemCount="6"
         tools:listitem="@layout/item_category" />

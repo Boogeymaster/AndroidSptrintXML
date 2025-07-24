@@ -7,6 +7,12 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
+    <style name="StyleImageViewHeader">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/header_iv_height</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
     <style name="StyleFragmentHeader" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">20sp</item>
         <item name="android:fontFamily">@font/montserrat_alternates_semi_bold</item>

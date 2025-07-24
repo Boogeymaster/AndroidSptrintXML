@@ -11,4 +11,5 @@
     <dimen name="header_tv_width">149dp</dimen>
     <dimen name="header_tv_height">44dp</dimen>
     <dimen name="categories_image_height">130dp</dimen>
+    <dimen name="header_iv_height">224dp</dimen>
 </resources>
