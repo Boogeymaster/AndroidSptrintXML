@@ -1,5 +1,6 @@
 package com.example.androidsptrintxml
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,6 +22,17 @@ class RecipeFragment : Fragment() {
         _binding = FragmentRecipeBinding.inflate(inflater, container, false)
         val view = binding.root
         return view
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val recipe = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            requireArguments().getParcelable(ARG_RECIPE, Recipe::class.java)
+        } else {
+            requireArguments().getParcelable(ARG_RECIPE)
+        }
+        binding.textView.text = recipe?.title ?: "null"
     }
 
     override fun onDestroy() {
