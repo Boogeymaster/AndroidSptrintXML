@@ -8,4 +8,5 @@
     <color name="ripple_color">#33FFFFFF</color>
     <color name="header_color">#5F3678</color>
     <color name="description_color">#666666</color>
+    <color name="divider_color">#F5F5F5</color>
 </resources>

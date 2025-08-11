@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="margin_layout_quarter">4dp</dimen>
     <dimen name="margin_layout_half">8dp</dimen>
     <dimen name="margin_layout_std">16dp</dimen>
     <dimen name="margin_between_btn">2dp</dimen>
