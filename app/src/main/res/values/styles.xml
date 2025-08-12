@@ -18,8 +18,6 @@
         <item name="android:fontFamily">@font/montserrat_alternates_semi_bold</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/header_color</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginStart">@dimen/margin_layout_std</item>
         <item name="android:layout_marginBottom">@dimen/margin_layout_std</item>
         <item name="android:background">@drawable/shape_radius_8</item>
@@ -59,6 +57,14 @@
 
     <style name="StyleCardIngredient" parent="StyleCardMethod">
         <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="StyleRecyclerRecipe">
+        <item name="android:background">@drawable/shape_radius_8</item>
+        <item name="android:layout_margin">@dimen/margin_layout_std</item>
+        <item name="android:padding">@dimen/padding_recycler_view</item>
+        <item name="android:paddingVertical">@dimen/padding_vertical_recycler_view</item>
+        <item name="spanCount">1</item>
     </style>
 
 </resources>

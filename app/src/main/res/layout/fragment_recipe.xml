@@ -21,29 +21,32 @@
         <TextView
             android:id="@+id/tvRecipeHeader"
             style="@style/StyleFragmentHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@id/ivRecipeHeader"
             app:layout_constraintStart_toStartOf="@id/ivRecipeHeader"
             tools:text="@string/burgers" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvIngredients"
+            style="@style/StyleRecyclerRecipe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_layout_quarter"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="100dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivRecipeHeader"
-            app:spanCount="1" />
+            tools:listitem="@layout/item_ingredient" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvMethods"
+            style="@style/StyleRecyclerRecipe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_layout_quarter"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rvIngredients"
-            app:spanCount="1" />
+            app:layout_constraintTop_toBottomOf="@+id/rvIngredients" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

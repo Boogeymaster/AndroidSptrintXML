@@ -22,7 +22,8 @@ class MethodsAdapter(val methodsList: List<String>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.binding.tvMethod.text = methodsList[position]
+        val methodText = "${position + 1}. ${methodsList[position]}"
+        holder.binding.tvMethod.text = methodText
     }
 
     override fun getItemCount() = methodsList.size
