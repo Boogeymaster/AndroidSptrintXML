@@ -8,4 +8,6 @@
     <string name="recipe_list_image">image of recipes list</string>
     <string name="burgers">burgers</string>
     <string name="recipes_image">image of recipe</string>
+    <string name="ingredients">ingredients</string>
+    <string name="cooking_method">cooking method</string>
 </resources>

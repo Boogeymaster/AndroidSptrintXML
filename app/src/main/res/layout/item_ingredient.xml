@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        tools:text="diuijfvniufv" />
+        tools:text="Булка" />
 
     <TextView
         android:id="@+id/tvIngredientCounter"
@@ -19,6 +19,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        tools:text="321 pl" />
+        tools:text="5 штук" />
 
 </FrameLayout>
