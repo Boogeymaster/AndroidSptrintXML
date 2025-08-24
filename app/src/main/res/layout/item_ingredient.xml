@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_layout_half">
+
+    <TextView
+        android:id="@+id/tvIngredient"
+        style="@style/StyleCardIngredient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        tools:text="Булка" />
+
+    <TextView
+        android:id="@+id/tvIngredientCounter"
+        style="@style/StyleCardIngredient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        tools:text="5 штук" />
+
+</FrameLayout>

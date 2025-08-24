@@ -2,9 +2,18 @@
 <resources>
 
     <style name="StyleTitle14" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">@dimen/text_size_std</item>
         <item name="android:fontFamily">@font/montserrat_alternates_semi_bold</item>
         <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="StyleTitle20" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_header</item>
+        <item name="android:fontFamily">@font/montserrat_alternates_semi_bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/header_color</item>
+        <item name="android:layout_marginStart">@dimen/margin_layout_std</item>
+        <item name="android:layout_marginTop">@dimen/margin_layout_std</item>
     </style>
 
     <style name="StyleImageViewHeader">
@@ -14,12 +23,10 @@
     </style>
 
     <style name="StyleFragmentHeader" parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">@dimen/text_size_header</item>
         <item name="android:fontFamily">@font/montserrat_alternates_semi_bold</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/header_color</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginStart">@dimen/margin_layout_std</item>
         <item name="android:layout_marginBottom">@dimen/margin_layout_std</item>
         <item name="android:background">@drawable/shape_radius_8</item>
@@ -28,7 +35,7 @@
     </style>
 
     <style name="StyleCardHeader" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">@dimen/text_size_std</item>
         <item name="android:fontFamily">@font/montserrat_alternates_semi_bold</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/header_color</item>
@@ -37,7 +44,7 @@
     </style>
 
     <style name="StyleCardDescription" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">@dimen/text_size_description</item>
         <item name="android:fontFamily">@font/montserrat_medium</item>
         <item name="android:textColor">@color/description_color</item>
         <item name="android:layout_marginVertical">@dimen/margin_layout_half</item>
@@ -49,4 +56,24 @@
         <item name="android:buttonCornerRadius">@dimen/corner_radius</item>
         <item name="android:textColor">@color/white_color</item>
     </style>
+
+    <style name="StyleCardMethod">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:gravity">start</item>
+        <item name="android:textColor">@color/description_color</item>
+        <item name="android:textSize">@dimen/text_size_std</item>
+    </style>
+
+    <style name="StyleCardIngredient" parent="StyleCardMethod">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_margin">@dimen/margin_layout_quarter</item>
+    </style>
+
+    <style name="StyleRecyclerRecipe">
+        <item name="android:background">@drawable/shape_white_radius_8</item>
+        <item name="android:layout_margin">@dimen/margin_layout_std</item>
+        <item name="android:padding">@dimen/padding_recycler_view</item>
+        <item name="spanCount">1</item>
+    </style>
+
 </resources>

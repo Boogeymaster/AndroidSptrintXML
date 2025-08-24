@@ -9,4 +9,6 @@
     <string name="recipe_list_image">изображение списка рецептов</string>
     <string name="burgers">бургеры</string>
     <string name="recipes_image">изображение категории</string>
+    <string name="ingredients">ингредиенты</string>
+    <string name="cooking_method">способ приготовления</string>
 </resources>
