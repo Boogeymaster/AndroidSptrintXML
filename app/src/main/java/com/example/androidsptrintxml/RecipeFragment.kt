@@ -62,6 +62,8 @@ class RecipeFragment : Fragment() {
         dividerItemDecoration.apply {
             this.dividerColor = resources.getColor(R.color.divider_color)
             this.isLastItemDecorated = false
+            this.dividerInsetStart = DIVIDER_INSET
+            this.dividerInsetEnd = DIVIDER_INSET
         }
         ingredientsRecycler.addItemDecoration(dividerItemDecoration)
         ingredientsRecycler.adapter = ingredientsAdapter

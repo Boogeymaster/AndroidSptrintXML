@@ -7,6 +7,15 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
+    <style name="StyleTitle20" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_header</item>
+        <item name="android:fontFamily">@font/montserrat_alternates_semi_bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/header_color</item>
+        <item name="android:layout_marginStart">@dimen/margin_layout_std</item>
+        <item name="android:layout_marginTop">@dimen/margin_layout_std</item>
+    </style>
+
     <style name="StyleImageViewHeader">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/header_iv_height</item>
