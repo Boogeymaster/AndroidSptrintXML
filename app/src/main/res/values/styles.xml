@@ -84,4 +84,9 @@
         <item name="spanCount">1</item>
     </style>
 
+    <style name="StyleSeekBar">
+        <item name="android:thumb">@drawable/shape_seekbar_thumb</item>
+        <item name="android:progressDrawable">@drawable/shape_seekbar_progress</item>
+    </style>
+
 </resources>
