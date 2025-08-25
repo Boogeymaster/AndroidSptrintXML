@@ -10,4 +10,5 @@
     <string name="recipes_image">image of recipe</string>
     <string name="ingredients">ingredients</string>
     <string name="cooking_method">cooking method</string>
+    <string name="portion">Portion:</string>
 </resources>
