@@ -8,6 +8,7 @@ import com.example.androidsptrintxml.databinding.ItemIngredientBinding
 
 class IngredientsAdapter(val ingredientsList: List<Ingredient>) :
     RecyclerView.Adapter<IngredientsAdapter.ViewHolder>() {
+    var quantity: Int = 1
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val binding: ItemIngredientBinding = ItemIngredientBinding.bind(view)
@@ -22,12 +23,20 @@ class IngredientsAdapter(val ingredientsList: List<Ingredient>) :
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         with(viewHolder.binding) {
             tvIngredient.text = ingredientsList[position].description
-            val ingredientsCounter =
-                "${ingredientsList[position].quantity} ${ingredientsList[position].unitOfMeasure}"
-            tvIngredientCounter.text = ingredientsCounter
+            val ingredientsQuantity = ingredientsList[position].quantity.toFloat() * quantity
+            val ingredientsCounter = if (ingredientsQuantity % 1 > 0) {
+                "${"%.1f".format(ingredientsQuantity)}  ${ingredientsList[position].unitOfMeasure}"
 
+            } else {
+                "${ingredientsQuantity.toInt()}  ${ingredientsList[position].unitOfMeasure}"
+            }
+            tvIngredientCounter.text = ingredientsCounter
         }
     }
 
     override fun getItemCount() = ingredientsList.size
+
+    fun updateIngredients(progress: Int) {
+        quantity = progress
+    }
 }
