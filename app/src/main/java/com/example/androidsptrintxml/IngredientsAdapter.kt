@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidsptrintxml.databinding.ItemIngredientBinding
+import java.math.BigDecimal
 
 class IngredientsAdapter(val ingredientsList: List<Ingredient>) :
     RecyclerView.Adapter<IngredientsAdapter.ViewHolder>() {
@@ -23,14 +24,10 @@ class IngredientsAdapter(val ingredientsList: List<Ingredient>) :
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         with(viewHolder.binding) {
             tvIngredient.text = ingredientsList[position].description
-            val ingredientsQuantity = ingredientsList[position].quantity.toFloat() * quantity
-            val ingredientsCounter = if (ingredientsQuantity % 1 > 0) {
-                "${"%.1f".format(ingredientsQuantity)}  ${ingredientsList[position].unitOfMeasure}"
-
-            } else {
-                "${ingredientsQuantity.toInt()}  ${ingredientsList[position].unitOfMeasure}"
-            }
-            tvIngredientCounter.text = ingredientsCounter
+            val ingredientsQuantity = BigDecimal(ingredientsList[position].quantity).multiply(
+                BigDecimal(quantity)).stripTrailingZeros().toPlainString()
+            val ingredientsCounterText = "$ingredientsQuantity ${ingredientsList[position].unitOfMeasure}"
+            tvIngredientCounter.text = ingredientsCounterText
         }
     }
 

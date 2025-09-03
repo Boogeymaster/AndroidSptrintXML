@@ -41,6 +41,7 @@
             style="@style/StyleTitle16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_layout_std"
             android:text="@string/portion"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvIngredients" />
@@ -50,6 +51,8 @@
             style="@style/StyleTitle16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_layout_counter"
+            android:text="1"
             app:layout_constraintStart_toEndOf="@id/tvPortion"
             app:layout_constraintTop_toBottomOf="@id/tvIngredients" />
 
