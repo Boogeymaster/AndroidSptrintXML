@@ -11,7 +11,6 @@
         <item name="android:textSize">@dimen/text_size_16</item>
         <item name="android:fontFamily">@font/montserrat_alternates_semi_bold</item>
         <item name="android:textColor">@color/description_color</item>
-        <item name="android:layout_marginStart">@dimen/margin_layout_std</item>
         <item name="android:layout_marginTop">@dimen/margin_layout_counter</item>
     </style>
 
