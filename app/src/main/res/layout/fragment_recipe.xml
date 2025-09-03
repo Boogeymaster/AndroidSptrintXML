@@ -36,6 +36,37 @@
             app:layout_constraintStart_toStartOf="@id/ivRecipeHeader"
             app:layout_constraintTop_toBottomOf="@id/ivRecipeHeader" />
 
+        <TextView
+            android:id="@+id/tvPortion"
+            style="@style/StyleTitle16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_layout_std"
+            android:text="@string/portion"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvIngredients" />
+
+        <TextView
+            android:id="@+id/tvPortionCount"
+            style="@style/StyleTitle16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_layout_counter"
+            android:text="1"
+            app:layout_constraintStart_toEndOf="@id/tvPortion"
+            app:layout_constraintTop_toBottomOf="@id/tvIngredients" />
+
+        <SeekBar
+            android:id="@+id/sbPortionCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_layout_std"
+            android:layout_marginTop="@dimen/margin_layout_counter"
+            android:max="5"
+            android:min="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvPortion" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvIngredients"
             style="@style/StyleRecyclerRecipe"
@@ -43,7 +74,7 @@
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvIngredients"
+            app:layout_constraintTop_toBottomOf="@+id/sbPortionCount"
             tools:listitem="@layout/item_ingredient" />
 
         <TextView

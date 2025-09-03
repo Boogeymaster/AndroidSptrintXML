@@ -7,6 +7,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SeekBar
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidsptrintxml.databinding.FragmentRecipeBinding
@@ -60,10 +62,10 @@ class RecipeFragment : Fragment() {
             RecyclerView.VERTICAL
         )
         dividerItemDecoration.apply {
-            this.dividerColor = resources.getColor(R.color.divider_color)
+            this.dividerColor = ContextCompat.getColor(ingredientsRecycler.context, R.color.description_color)
             this.isLastItemDecorated = false
-            this.dividerInsetStart = DIVIDER_INSET
-            this.dividerInsetEnd = DIVIDER_INSET
+            this.dividerInsetStart = resources.getDimensionPixelSize(R.dimen.margin_divider)
+            this.dividerInsetEnd = resources.getDimensionPixelSize(R.dimen.margin_divider)
         }
         ingredientsRecycler.addItemDecoration(dividerItemDecoration)
         ingredientsRecycler.adapter = ingredientsAdapter
@@ -72,6 +74,22 @@ class RecipeFragment : Fragment() {
         val methodsRecycler: RecyclerView = binding.rvMethods
         methodsRecycler.addItemDecoration(dividerItemDecoration)
         methodsRecycler.adapter = methodAdapter
+        binding.sbPortionCount.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(
+                seekBar: SeekBar?,
+                progress: Int,
+                fromUser: Boolean
+            ) {
+                binding.tvPortionCount.text = "$progress"
+                ingredientsAdapter.updateIngredients(progress)
+                ingredientsAdapter.notifyDataSetChanged()
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+
+        })
     }
 
     override fun onDestroy() {

@@ -7,6 +7,13 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
+    <style name="StyleTitle16" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:fontFamily">@font/montserrat_alternates_semi_bold</item>
+        <item name="android:textColor">@color/description_color</item>
+        <item name="android:layout_marginTop">@dimen/margin_layout_counter</item>
+    </style>
+
     <style name="StyleTitle20" parent="TextAppearance.AppCompat">
         <item name="android:textSize">@dimen/text_size_header</item>
         <item name="android:fontFamily">@font/montserrat_alternates_semi_bold</item>
