@@ -25,13 +25,9 @@ class IngredientsAdapter(val ingredientsList: List<Ingredient>) :
         with(viewHolder.binding) {
             tvIngredient.text = ingredientsList[position].description
             val ingredientsQuantity = BigDecimal(ingredientsList[position].quantity).multiply(
-                BigDecimal(quantity))
-            val ingredientsCounter = if (ingredientsQuantity % BigDecimal(1) > BigDecimal(0)) {
-                "${ingredientsQuantity.setScale(1)}  ${ingredientsList[position].unitOfMeasure}"
-            } else {
-                "${ingredientsQuantity.toInt()}  ${ingredientsList[position].unitOfMeasure}"
-            }
-            tvIngredientCounter.text = ingredientsCounter
+                BigDecimal(quantity)).stripTrailingZeros().toPlainString()
+            val ingredientsCounterText = "$ingredientsQuantity ${ingredientsList[position].unitOfMeasure}"
+            tvIngredientCounter.text = ingredientsCounterText
         }
     }
 
