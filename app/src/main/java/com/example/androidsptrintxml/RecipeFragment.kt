@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidsptrintxml.databinding.FragmentRecipeBinding
@@ -51,7 +52,34 @@ class RecipeFragment : Fragment() {
         } catch (e: Exception) {
             Log.e("error", "Error drawable in RecipeFragment", e)
         }
-        binding.tvRecipeHeader.text = recipe?.title
+        setFavoriteDrawable(recipe?.isFavorite)
+        with(binding) {
+            tvRecipeHeader.text = recipe?.title
+            ibIsFavorites.setOnClickListener {
+                recipe?.isFavorite?.let { it1 -> recipe?.isFavorite = !it1 }
+                setFavoriteDrawable(recipe?.isFavorite)
+            }
+        }
+    }
+
+    fun setFavoriteDrawable(isFavorite: Boolean?) {
+        if (isFavorite ?: false) {
+            binding.ibIsFavorites.setImageDrawable(
+                ResourcesCompat.getDrawable(
+                    resources,
+                    R.drawable.ic_heart_40,
+                    null
+                )
+            )
+        } else {
+            binding.ibIsFavorites.setImageDrawable(
+                ResourcesCompat.getDrawable(
+                    resources,
+                    R.drawable.ic_heart_empty_40,
+                    null
+                )
+            )
+        }
     }
 
     fun initRecyclers() {
@@ -62,7 +90,8 @@ class RecipeFragment : Fragment() {
             RecyclerView.VERTICAL
         )
         dividerItemDecoration.apply {
-            this.dividerColor = ContextCompat.getColor(ingredientsRecycler.context, R.color.description_color)
+            this.dividerColor =
+                ContextCompat.getColor(ingredientsRecycler.context, R.color.divider_color)
             this.isLastItemDecorated = false
             this.dividerInsetStart = resources.getDimensionPixelSize(R.dimen.margin_divider)
             this.dividerInsetEnd = resources.getDimensionPixelSize(R.dimen.margin_divider)

@@ -11,4 +11,5 @@
     <color name="divider_color">#F5F5F5</color>
     <color name="seek_bar_progress_color">#525DC0</color>
     <color name="seek_bar_thumb_color">#A1A9F9</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>

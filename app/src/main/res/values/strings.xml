@@ -11,4 +11,5 @@
     <string name="ingredients">ingredients</string>
     <string name="cooking_method">cooking method</string>
     <string name="portion">Portion:</string>
+    <string name="favorites">Favorites</string>
 </resources>
