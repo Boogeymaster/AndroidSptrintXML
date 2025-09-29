@@ -1,5 +1,6 @@
 package com.example.androidsptrintxml
 
+import android.content.Context
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.androidsptrintxml.databinding.FragmentRecipeBinding
 import com.google.android.material.divider.MaterialDividerItemDecoration
 import java.io.InputStream
+import androidx.core.content.edit
 
 class RecipeFragment : Fragment() {
     private var _binding: FragmentRecipeBinding? = null
@@ -43,6 +45,18 @@ class RecipeFragment : Fragment() {
         initRecyclers()
     }
 
+    fun saveFavorites(favoriteIds: Set<String>) {
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+        sharedPref?.edit { putStringSet(FAVORITE_RECIPE_IDS, favoriteIds) }
+    }
+
+    fun getFavorites(): MutableSet<String> {
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+        val favoriteIds = sharedPref?.getStringSet(FAVORITE_RECIPE_IDS, emptySet<String>())
+        return if (favoriteIds != null) HashSet(favoriteIds)
+        else HashSet()
+    }
+
     fun initUI() {
         try {
             val inputStream: InputStream? =
@@ -52,6 +66,7 @@ class RecipeFragment : Fragment() {
         } catch (e: Exception) {
             Log.e("error", "Error drawable in RecipeFragment", e)
         }
+        if (getFavorites().contains(recipe?.id.toString())) recipe?.isFavorite = true
         setFavoriteDrawable(recipe?.isFavorite)
         with(binding) {
             tvRecipeHeader.text = recipe?.title
@@ -64,6 +79,9 @@ class RecipeFragment : Fragment() {
 
     fun setFavoriteDrawable(isFavorite: Boolean?) {
         if (isFavorite ?: false) {
+            val favoriteIds = getFavorites()
+            favoriteIds.add(recipe?.id.toString())
+            saveFavorites(favoriteIds)
             binding.ibIsFavorites.setImageDrawable(
                 ResourcesCompat.getDrawable(
                     resources,
@@ -72,6 +90,9 @@ class RecipeFragment : Fragment() {
                 )
             )
         } else {
+            val favoriteIds = getFavorites()
+            favoriteIds.remove(recipe?.id.toString())
+            saveFavorites(favoriteIds)
             binding.ibIsFavorites.setImageDrawable(
                 ResourcesCompat.getDrawable(
                     resources,
