@@ -45,13 +45,13 @@ class RecipeFragment : Fragment() {
         initRecyclers()
     }
 
-    fun saveFavorites(favoriteIds: Set<String>) {
-        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+    fun saveFavorites(favoriteIds: Set<String>, context: Context) {
+        val sharedPref = context.getSharedPreferences(PREFERENCES, Context.MODE_PRIVATE)
         sharedPref?.edit { putStringSet(FAVORITE_RECIPE_IDS, favoriteIds) }
     }
 
-    fun getFavorites(): MutableSet<String> {
-        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+    fun getFavorites(context: Context): MutableSet<String> {
+        val sharedPref = context.getSharedPreferences(PREFERENCES, Context.MODE_PRIVATE)
         val favoriteIds = sharedPref?.getStringSet(FAVORITE_RECIPE_IDS, emptySet<String>())
         return if (favoriteIds != null) HashSet(favoriteIds)
         else HashSet()
@@ -66,7 +66,8 @@ class RecipeFragment : Fragment() {
         } catch (e: Exception) {
             Log.e("error", "Error drawable in RecipeFragment", e)
         }
-        if (getFavorites().contains(recipe?.id.toString())) recipe?.isFavorite = true
+        if (getFavorites(requireContext()).contains(recipe?.id.toString())) recipe?.isFavorite =
+            true
         setFavoriteDrawable(recipe?.isFavorite)
         with(binding) {
             tvRecipeHeader.text = recipe?.title
@@ -79,9 +80,9 @@ class RecipeFragment : Fragment() {
 
     fun setFavoriteDrawable(isFavorite: Boolean?) {
         if (isFavorite ?: false) {
-            val favoriteIds = getFavorites()
+            val favoriteIds = getFavorites(requireContext())
             favoriteIds.add(recipe?.id.toString())
-            saveFavorites(favoriteIds)
+            saveFavorites(favoriteIds, requireContext())
             binding.ibIsFavorites.setImageDrawable(
                 ResourcesCompat.getDrawable(
                     resources,
@@ -90,9 +91,9 @@ class RecipeFragment : Fragment() {
                 )
             )
         } else {
-            val favoriteIds = getFavorites()
+            val favoriteIds = getFavorites(requireContext())
             favoriteIds.remove(recipe?.id.toString())
-            saveFavorites(favoriteIds)
+            saveFavorites(favoriteIds, requireContext())
             binding.ibIsFavorites.setImageDrawable(
                 ResourcesCompat.getDrawable(
                     resources,

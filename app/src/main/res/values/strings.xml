@@ -12,4 +12,5 @@
     <string name="cooking_method">cooking method</string>
     <string name="portion">Portion:</string>
     <string name="favorites">Favorites</string>
+    <string name="favorites_header_image">image of favorites header</string>
 </resources>
