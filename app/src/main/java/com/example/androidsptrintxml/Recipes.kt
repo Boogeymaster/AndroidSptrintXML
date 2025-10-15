@@ -276,4 +276,9 @@ object STUB {
     fun getRecipeById(recipeId: Int): Recipe {
         return burgerRecipes[recipeId]
     }
+
+    fun getRecipesByIds(ids: MutableSet<String>): List<Recipe> {
+        val intIds = ids.map { it.toInt() }
+        return burgerRecipes.filter { it.id in intIds }
+    }
 }
